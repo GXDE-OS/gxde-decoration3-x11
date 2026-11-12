@@ -7,29 +7,29 @@ set(libkdecoration3Private_SRCS
     decorationsettingsprivate.h
 )
 
-add_library(kdecorations3private SHARED ${libkdecoration3Private_SRCS})
+add_library(gxde-decoration3-x11-private SHARED ${libkdecoration3Private_SRCS})
 
 generate_export_header(
-    kdecorations3private
+    gxde-decoration3-x11-private
 BASE_NAME
     KDECORATIONS_PRIVATE
 EXPORT_FILE_NAME
     kdecoration3/private/kdecoration3_private_export.h
 )
 
-add_library(KDecoration3::KDecorationPrivate ALIAS kdecorations3private)
+add_library(gxde-decoration3-x11::DecorationPrivate ALIAS gxde-decoration3-x11-private)
 
-target_link_libraries(kdecorations3private
+target_link_libraries(gxde-decoration3-x11-private
     PUBLIC
         Qt::Core
         Qt::Gui
 )
 
-target_include_directories(kdecorations3private INTERFACE "$<INSTALL_INTERFACE:${KDECORATION3_INCLUDEDIR}>" )
+target_include_directories(gxde-decoration3-x11-private INTERFACE "$<INSTALL_INTERFACE:${KDECORATION3_INCLUDEDIR}>" )
 
-set_target_properties(kdecorations3private PROPERTIES VERSION   ${KDECORATION3_VERSION}
+set_target_properties(gxde-decoration3-x11-private PROPERTIES VERSION   ${KDECORATION3_VERSION}
                                                       SOVERSION 2
-                                                      EXPORT_NAME KDecoration3Private
+                                                      EXPORT_NAME DecorationPrivate
 )
 
 ecm_generate_headers(KDecoration3Private_CamelCase_HEADERS
@@ -45,7 +45,7 @@ install(FILES ${KDecoration3Private_CamelCase_HEADERS}
         DESTINATION ${KDECORATION3_INCLUDEDIR}/KDecoration3/Private
         COMPONENT Devel)
 
-install(TARGETS kdecorations3private EXPORT KDecoration3Targets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS gxde-decoration3-x11-private EXPORT gxde-decoration3-x11Targets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(
     FILES

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(decoration-api)
+project(gxde-decoration3-x11)
 set(PROJECT_VERSION "6.8.4")
 set(PROJECT_VERSION_MAJOR 6)
 
@@ -30,7 +30,7 @@ include(ECMDeprecationSettings)
 
 ecm_setup_version(${PROJECT_VERSION} VARIABLE_PREFIX KDECORATION3
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kdecoration3_version.h"
-                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KDecoration3ConfigVersion.cmake"
+                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/gxde-decoration3-x11ConfigVersion.cmake"
                         SOVERSION ${PROJECT_VERSION_MAJOR})
 
 #dependencies
@@ -49,7 +49,7 @@ endif()
 
 set(EXCLUDE_DEPRECATED_BEFORE_AND_AT 0 CACHE STRING "Control the range of deprecated API excluded from the build [default=0].")
 
-set(KDECORATION3_INCLUDEDIR "${KDE_INSTALL_INCLUDEDIR}/KDecoration3")
+set(KDECORATION3_INCLUDEDIR "${KDE_INSTALL_INCLUDEDIR}/gxde-decoration3-x11")
 find_package(KF6I18n ${KF6_MIN_VERSION} CONFIG REQUIRED)
 
 ecm_set_disabled_deprecation_versions(QT 6.2.0
@@ -70,23 +70,23 @@ kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 
 # create a Config.cmake and a ConfigVersion.cmake file and install them
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KDecoration3")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/gxde-decoration3-x11")
 
-configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/KDecoration3Config.cmake.in"
-                                  "${CMAKE_CURRENT_BINARY_DIR}/KDecoration3Config.cmake"
+configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/gxde-decoration3-x11Config.cmake.in"
+                                  "${CMAKE_CURRENT_BINARY_DIR}/gxde-decoration3-x11Config.cmake"
                                   INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
                                   )
 
-install(FILES  "${CMAKE_CURRENT_BINARY_DIR}/KDecoration3Config.cmake"
-               "${CMAKE_CURRENT_BINARY_DIR}/KDecoration3ConfigVersion.cmake"
+install(FILES  "${CMAKE_CURRENT_BINARY_DIR}/gxde-decoration3-x11Config.cmake"
+               "${CMAKE_CURRENT_BINARY_DIR}/gxde-decoration3-x11ConfigVersion.cmake"
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel )
 
-install(EXPORT KDecoration3Targets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KDecoration3Targets.cmake NAMESPACE KDecoration3:: )
+install(EXPORT gxde-decoration3-x11Targets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE gxde-decoration3-x11Targets.cmake NAMESPACE gxde-decoration3-x11:: )
 
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kdecoration3_version.h
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF} COMPONENT Devel )
+        DESTINATION ${KDECORATION3_INCLUDEDIR} COMPONENT Devel )
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 

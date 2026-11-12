@@ -1,4 +1,4 @@
-add_definitions(-DTRANSLATION_DOMAIN=\"kdecoration\")
+add_definitions(-DTRANSLATION_DOMAIN=\"gxde-decoration3-x11\")
 
 add_subdirectory(private)
 
@@ -25,30 +25,31 @@ set(libkdecoration3_SRCS
 
 )
 
-add_library(kdecorations3 SHARED ${libkdecoration3_SRCS})
-ecm_generate_export_header(kdecorations3
+add_library(gxde-decoration3-x11 SHARED ${libkdecoration3_SRCS})
+ecm_generate_export_header(gxde-decoration3-x11
+    BASE_NAME KDECORATIONS3
     VERSION ${PROJECT_VERSION}
     EXPORT_FILE_NAME kdecoration3/kdecoration3_export.h
     DEPRECATION_VERSIONS 5.21
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
 )
 
-add_library(KDecoration3::KDecoration ALIAS kdecorations3)
+add_library(gxde-decoration3-x11::Decoration ALIAS gxde-decoration3-x11)
 
-target_link_libraries(kdecorations3
+target_link_libraries(gxde-decoration3-x11
     PUBLIC
         Qt::Core
         Qt::Gui
     PRIVATE
-        kdecorations3private
+        gxde-decoration3-x11-private
         KF6::I18n
 )
 
-target_include_directories(kdecorations3 INTERFACE "$<INSTALL_INTERFACE:${KDECORATION3_INCLUDEDIR}>" )
+target_include_directories(gxde-decoration3-x11 INTERFACE "$<INSTALL_INTERFACE:${KDECORATION3_INCLUDEDIR}>" )
 
-set_target_properties(kdecorations3 PROPERTIES VERSION   ${KDECORATION3_VERSION}
+set_target_properties(gxde-decoration3-x11 PROPERTIES VERSION   ${KDECORATION3_VERSION}
                                                SOVERSION ${KDECORATION3_SOVERSION}
-                                               EXPORT_NAME KDecoration
+                                               EXPORT_NAME Decoration
 )
 
 ecm_generate_headers(KDecoration3_CamelCase_HEADERS
@@ -69,7 +70,7 @@ install(FILES ${KDecoration3_CamelCase_HEADERS}
         DESTINATION ${KDECORATION3_INCLUDEDIR}/KDecoration3
         COMPONENT Devel)
 
-install(TARGETS kdecorations3 EXPORT KDecoration3Targets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS gxde-decoration3-x11 EXPORT gxde-decoration3-x11Targets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(
     FILES

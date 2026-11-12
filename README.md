@@ -1,6 +1,14 @@
-# KDecoration3
+# gxde-decoration3-x11
 
-Plugin based library to create window decorations.
+Plugin based library to create window decorations, used by GXDE KWin X11.
+
+This is GXDE's build of KDE's KDecoration3. The project, libraries
+(`libgxde-decoration3-x11.so.6`, `libgxde-decoration3-x11-private.so.2`), CMake package
+(`find_package(gxde-decoration3-x11)`, targets `gxde-decoration3-x11::Decoration` and
+`gxde-decoration3-x11::DecorationPrivate`), include directory (`include/gxde-decoration3-x11`)
+and translation domain are all named `gxde-decoration3-x11`, so it can be installed next to
+the distribution's KDecoration3. The C++ API (namespace `KDecoration3`, `#include <KDecoration3/...>`)
+and the plugin metadata key `org.kde.kdecoration3` are unchanged.
 
 ## Introduction
 
