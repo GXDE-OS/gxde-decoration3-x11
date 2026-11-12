@@ -5,3 +5,15 @@
 /cmake-build*
 .cache
 /build*
+
+# Debian builds
+/obj-*
+/debian/.debhelper/
+/debian/debhelper-build-stamp
+/debian/files
+/debian/tmp/
+/debian/*.substvars
+/debian/*.debhelper.log
+/debian/gxde-decoration3-x11-data/
+/debian/libgxde-decoration3-x11-*/
+!/debian/libgxde-decoration3-x11-*.install

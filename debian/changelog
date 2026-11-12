@@ -1,0 +1,6 @@
+gxde-decoration3-x11 (6.8.4-1) unstable; urgency=medium
+
+  * Initial release, based on KDecoration 6.8.4.
+  * Patched the library so that it works on GXDE 25.5.
+
+ -- CharOfString <root@charofstring.cc>  Thu, 12 Nov 2026 09:16:05 -0600

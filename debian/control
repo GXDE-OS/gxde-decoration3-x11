@@ -1,0 +1,75 @@
+Source: gxde-decoration3-x11
+Section: libs
+Priority: optional
+Maintainer: CharOfString <root@charofstring.cc>
+Build-Depends:
+ cmake (>= 3.16~),
+ debhelper-compat (= 13),
+ extra-cmake-modules (>= 6.13.0~),
+ gettext,
+ libkf6i18n-dev (>= 6.13.0~),
+ ninja-build,
+ qt6-base-dev (>= 6.8.0~),
+Standards-Version: 4.7.2
+Homepage: https://github.com/GXDE-OS/gxde-decoration3
+Vcs-Browser: https://github.com/GXDE-OS/gxde-decoration3
+Vcs-Git: https://github.com/GXDE-OS/gxde-decoration3.git
+Rules-Requires-Root: no
+
+Package: libgxde-decoration3-x11-6
+Architecture: any
+Multi-Arch: same
+Depends:
+ gxde-decoration3-x11-data (= ${source:Version}),
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: window decoration library for GXDE KWin X11
+ gxde-decoration3-x11 is GXDE's build of the KDecoration 3 plugin based
+ library for creating window decorations. Its libraries, CMake package,
+ include directory and translation domain use a GXDE-specific name so that
+ it can be installed next to the distribution KDecoration 3 packages.
+ .
+ This package contains the decoration API library used by decoration
+ themes.
+
+Package: libgxde-decoration3-x11-private2
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: window decoration library for GXDE KWin X11 - private API
+ gxde-decoration3-x11 is GXDE's build of the KDecoration 3 plugin based
+ library for creating window decorations.
+ .
+ This package contains the private library implemented by the window
+ manager side (for example gxde-kwin_x11).
+
+Package: gxde-decoration3-x11-data
+Section: localization
+Architecture: all
+Multi-Arch: foreign
+Depends:
+ ${misc:Depends},
+Description: window decoration library for GXDE KWin X11 - translations
+ gxde-decoration3-x11 is GXDE's build of the KDecoration 3 plugin based
+ library for creating window decorations.
+ .
+ This package contains the translations.
+
+Package: libgxde-decoration3-x11-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends:
+ libgxde-decoration3-x11-6 (= ${binary:Version}),
+ libgxde-decoration3-x11-private2 (= ${binary:Version}),
+ qt6-base-dev (>= 6.8.0~),
+ ${misc:Depends},
+Description: window decoration library for GXDE KWin X11 - development files
+ gxde-decoration3-x11 is GXDE's build of the KDecoration 3 plugin based
+ library for creating window decorations.
+ .
+ This package contains the headers and the CMake package
+ (find_package(gxde-decoration3-x11)) for building decoration themes and
+ window managers against gxde-decoration3-x11.

@@ -1,0 +1,4 @@
+usr/include/gxde-decoration3-x11/
+usr/lib/*/cmake/gxde-decoration3-x11/
+usr/lib/*/libgxde-decoration3-x11-private.so
+usr/lib/*/libgxde-decoration3-x11.so

@@ -1,0 +1,74 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: gxde-decoration3-x11
+Upstream-Contact: CharOfString <root@charofstring.cc>
+Source: https://github.com/GXDE-OS/gxde-decoration3
+Comment: Based on KDecoration (https://invent.kde.org/plasma/kdecoration).
+
+Files: *
+Copyright: 2014, Martin Gräßlin <mgraesslin@kde.org>
+           2021, Alexander Lohnau <alexander.lohnau@gmx.de>
+           2024, Xaver Hugl <xaver.hugl@gmail.com>
+License: LGPL-2.1-only or LGPL-3.0-only or LicenseRef-KDE-Accepted-LGPL
+
+Files: .gitlab-ci.yml
+       .kde-ci.yml
+Copyright: None
+License: CC0-1.0
+
+Files: debian/*
+Copyright: 2026, CharOfString <root@charofstring.cc>
+License: LGPL-2.1-only or LGPL-3.0-only or LicenseRef-KDE-Accepted-LGPL
+
+License: LGPL-2.1-only
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; version 2.1
+ of the License.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ Lesser General Public License for more details.
+ .
+ On Debian systems, the complete text of the GNU Lesser General Public
+ License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
+
+License: LGPL-3.0-only
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; version 3
+ of the License.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ Lesser General Public License for more details.
+ .
+ On Debian systems, the complete text of the GNU Lesser General Public
+ License version 3 can be found in "/usr/share/common-licenses/LGPL-3".
+
+License: LicenseRef-KDE-Accepted-LGPL
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 3 of the license or (at your option) any later version
+ that is accepted by the membership of KDE e.V. (or its successor
+ approved by the membership of KDE e.V.), which shall act as a
+ proxy as defined in Section 6 of version 3 of the license.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ Lesser General Public License for more details.
+ .
+ On Debian systems, the complete text of the GNU Lesser General Public
+ License version 3 can be found in "/usr/share/common-licenses/LGPL-3".
+
+License: CC0-1.0
+ To the extent possible under law, the author(s) have dedicated all
+ copyright and related and neighboring rights to this software to the
+ public domain worldwide. This software is distributed without any
+ warranty.
+ .
+ On Debian systems, the complete text of the Creative Commons Zero v1.0
+ Universal license can be found in "/usr/share/common-licenses/CC0-1.0".
